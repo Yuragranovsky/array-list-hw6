@@ -127,8 +127,14 @@ public class ArrayList<T> implements List<T> {
 	
 	@Override
 	public boolean removeIf(Predicate<T> predicate) {
-		// TODO Auto-generated method stub
-		return false;
+		int prevSize=size;
+ 		for(int i=size-1; i>=0; i--) if (predicate.test(array[i]))remove(i);
+//	Version 2
+// 		for(int i=0; i<size-1; i++) {
+// 			if (predicate.test(array[i]))remove(i);
+// 			i--;
+// 		}
+		return prevSize >size;
 	}
 
 }
