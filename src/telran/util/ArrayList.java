@@ -1,5 +1,5 @@
 package telran.util;
-
+// HW-6-IlyaL
 import java.util.Arrays;
 import java.util.function.Predicate;
 
