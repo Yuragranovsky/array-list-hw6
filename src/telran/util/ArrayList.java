@@ -110,16 +110,21 @@ public class ArrayList<T> implements List<T> {
 		}
 		return res;
 	}
+	
 	@Override
 	public int indexOf(Predicate<T> predicate) {
-		// TODO Auto-generated method stub
-		return 0;
+		for ( int i=0; i<size; i++) 
+			if (predicate.test(array[i])) return(i);
+		return (-1);
+		
 	}
+	
 	@Override
 	public int lastIndexOf(Predicate<T> predicate) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
+		for ( int i=size-1; i>=0; i--) if (predicate.test(array[i])) return(i);
+		return (-1);
+			}
+	
 	@Override
 	public boolean removeIf(Predicate<T> predicate) {
 		// TODO Auto-generated method stub
